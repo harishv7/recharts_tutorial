@@ -1,10 +1,27 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { Box, Container, Heading, Text, Stack } from "@chakra-ui/react";
 import { useDropzone } from "react-dropzone";
+import Papa from "papaparse";
+import Nav from "./Nav";
 
 function App() {
+  const [data, setData] = useState([]);
+
+  const parseFile = (file) => {
+    Papa.parse(file, {
+      header: true,
+      complete: (results) => {
+        console.log(results);
+        setData(results.data);
+      },
+    });
+  };
+
   const onDrop = useCallback((acceptedFiles) => {
     console.log(acceptedFiles);
+    if (acceptedFiles.length) {
+      parseFile(acceptedFiles[0]);
+    }
     // Do something with the files
   }, []);
 
@@ -12,6 +29,7 @@ function App() {
 
   return (
     <div className="App">
+      <Nav />
       <Container maxW={"5xl"}>
         <Stack
           textAlign="center"
