@@ -3,6 +3,7 @@ import { Box, Container, Heading, Text, Stack } from "@chakra-ui/react";
 import { useDropzone } from "react-dropzone";
 import Papa from "papaparse";
 import Nav from "./Nav";
+import LineChartContainer from "./LineChart";
 
 function App() {
   const [data, setData] = useState([]);
@@ -63,6 +64,9 @@ function App() {
             </div>
           </Box>
         </Stack>
+      </Container>
+      <Container height={"2xl"} width={"8xl"}>
+        <LineChartContainer data={data} />
       </Container>
     </div>
   );

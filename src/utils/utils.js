@@ -5,7 +5,3 @@ export const formatNumber = (number) => {
     compactDisplay: "short",
   }).format(number);
 };
-
-export const formatDate = (data) => {
-  return Date().;
-};
