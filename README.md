@@ -7,7 +7,7 @@ This repository provides a base template for my tutorial on Recharts.
 Clone the repository using the following command:
 
 ```
-git clone https://github.com/harishv7/recharts_examples.git
+git clone https://github.com/harishv7/recharts_tutorial.git
 ```
 
 ## Install dependencies
