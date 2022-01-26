@@ -1,14 +1,14 @@
 import React, { useCallback, useState } from "react";
-import { Box, Container, Heading, Text, Stack } from "@chakra-ui/react";
+import { Button, Box, Container, Heading, Text, Stack } from "@chakra-ui/react";
 import { useDropzone } from "react-dropzone";
 import Papa from "papaparse";
 import Nav from "./Nav";
 import LineChartContainer from "./LineChart";
 import AreaChartContainer from "./AreaChart";
-import { AreaChart } from "recharts";
 
 function App() {
   const [data, setData] = useState([]);
+  const [chartType, setChartType] = useState("line");
 
   const parseFile = (file) => {
     Papa.parse(file, {
@@ -65,11 +65,27 @@ function App() {
               )}
             </div>
           </Box>
+          <Stack spacing={4} direction="row" align="center">
+            <Button
+              colorScheme="teal"
+              size="md"
+              onClick={() => setChartType("line")}
+            >
+              Line Chart
+            </Button>
+            <Button
+              colorScheme="teal"
+              size="md"
+              onClick={() => setChartType("area")}
+            >
+              Area Chart
+            </Button>
+          </Stack>
         </Stack>
       </Container>
       <Container height={"2xl"} width={"8xl"}>
-        {/* <LineChartContainer data={data} /> */}
-        <AreaChartContainer data={data} />
+        {chartType === "line" && <LineChartContainer data={data} />}
+        {chartType === "area" && <AreaChartContainer data={data} />}
       </Container>
     </div>
   );
