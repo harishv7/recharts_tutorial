@@ -4,6 +4,8 @@ import { useDropzone } from "react-dropzone";
 import Papa from "papaparse";
 import Nav from "./Nav";
 import LineChartContainer from "./LineChart";
+import AreaChartContainer from "./AreaChart";
+import { AreaChart } from "recharts";
 
 function App() {
   const [data, setData] = useState([]);
@@ -66,7 +68,8 @@ function App() {
         </Stack>
       </Container>
       <Container height={"2xl"} width={"8xl"}>
-        <LineChartContainer data={data} />
+        {/* <LineChartContainer data={data} /> */}
+        <AreaChartContainer data={data} />
       </Container>
     </div>
   );
