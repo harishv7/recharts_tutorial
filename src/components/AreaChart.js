@@ -1,4 +1,5 @@
 import {
+<<<<<<< HEAD
   CartesianGrid,
   AreaChart,
   XAxis,
@@ -7,35 +8,66 @@ import {
   Tooltip,
   Legend,
   Area,
+=======
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  Legend,
+>>>>>>> b3a3059d94c6714d366b9250a58daba03b8a2237
 } from "recharts";
 
 export default function AreaChartContainer({ data }) {
   return (
-    <ResponsiveContainer>
+    <ResponsiveContainer width="100%" height="100%">
       <AreaChart
-        width={"100%"}
-        height={"100%"}
+        width={500}
+        height={400}
         data={data}
-        margin={{ top: 5, right: 30, left: 20, bottom: 30 }}
+        margin={{
+          top: 10,
+          right: 30,
+          left: 0,
+          bottom: 0,
+        }}
       >
-        <CartesianGrid strokeDasharray={"3 3"} />
+        <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="Year" />
         <YAxis />
+        <Legend />
+        <Tooltip />
         <Area
-          dataKey="Olivia"
-          stackId="1"
           type="monotone"
+          dataKey="Ava"
+          stackId="1"
+          stroke="#969600"
+          fill="#493910"
+        />
+        <Area
+          type="monotone"
+          dataKey="Charlotte"
+          stackId="1"
           stroke="#8884d8"
           fill="#8884d8"
         />
         <Area
+<<<<<<< HEAD
           dataKey="Emma"
           stackId="1"
           type="monotone"
+=======
+          type="monotone"
+          dataKey="Olivia"
+          stackId="1"
+>>>>>>> b3a3059d94c6714d366b9250a58daba03b8a2237
           stroke="#82ca9d"
           fill="#82ca9d"
         />
         <Area
+<<<<<<< HEAD
           dataKey="Ava"
           stackId="1"
           type="monotone"
@@ -51,6 +83,14 @@ export default function AreaChartContainer({ data }) {
         />
         <Tooltip />
         <Legend />
+=======
+          type="monotone"
+          dataKey="Emma"
+          stackId="1"
+          stroke="#ffc658"
+          fill="#ffc658"
+        />
+>>>>>>> b3a3059d94c6714d366b9250a58daba03b8a2237
       </AreaChart>
     </ResponsiveContainer>
   );
