@@ -5,6 +5,7 @@ import Papa from "papaparse";
 import Nav from "./Nav";
 import LineChartContainer from "./LineChart";
 import AreaChartContainer from "./AreaChart";
+import BarChartContainer from "./BarChart";
 
 function App() {
   const [data, setData] = useState([]);
@@ -80,12 +81,20 @@ function App() {
             >
               Area Chart
             </Button>
+            <Button
+              colorScheme="teal"
+              size="md"
+              onClick={() => setChartType("bar")}
+            >
+              Bar Chart
+            </Button>
           </Stack>
         </Stack>
       </Container>
       <Container height={"2xl"} width={"8xl"}>
         {chartType === "line" && <LineChartContainer data={data} />}
         {chartType === "area" && <AreaChartContainer data={data} />}
+        {chartType === "bar" && <BarChartContainer data={data} />}
       </Container>
     </div>
   );
