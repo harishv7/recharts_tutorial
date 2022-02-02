@@ -6,6 +6,7 @@ import Nav from "./Nav";
 import LineChartContainer from "./LineChart";
 import AreaChartContainer from "./AreaChart";
 import BarChartContainer from "./BarChart";
+import PieChartContainer from "./PieChart";
 
 function App() {
   const [data, setData] = useState([]);
@@ -88,14 +89,20 @@ function App() {
             >
               Bar Chart
             </Button>
+            <Button
+              colorScheme="teal"
+              size="md"
+              onClick={() => setChartType("pie")}
+            >
+              Pie Chart
+            </Button>
           </Stack>
         </Stack>
       </Container>
-      <Container height={"2xl"} width={"8xl"}>
-        {chartType === "line" && <LineChartContainer data={data} />}
-        {chartType === "area" && <AreaChartContainer data={data} />}
-        {chartType === "bar" && <BarChartContainer data={data} />}
-      </Container>
+      {chartType === "line" && <LineChartContainer data={data} />}
+      {chartType === "area" && <AreaChartContainer data={data} />}
+      {chartType === "bar" && <BarChartContainer data={data} />}
+      {chartType === "pie" && <PieChartContainer data={data} />}
     </div>
   );
 }
