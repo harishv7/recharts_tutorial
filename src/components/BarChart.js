@@ -40,10 +40,8 @@ export default function BarChartContainer({ data }) {
   };
 
   return (
-    <ResponsiveContainer width={"100%"} height={"100%"}>
+    <ResponsiveContainer width={"100%"} height={500}>
       <BarChart
-        width={500}
-        height={400}
         data={parseData(data)}
         margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
       >

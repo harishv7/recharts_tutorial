@@ -12,10 +12,8 @@ import { formatNumber } from "../utils/utils";
 
 export default function LineChartContainer({ data }) {
   return (
-    <ResponsiveContainer>
+    <ResponsiveContainer width={"100%"} height={500}>
       <LineChart
-        width={"100%"}
-        height={"100%"}
         data={data}
         margin={{ top: 5, right: 30, left: 20, bottom: 30 }}
       >
