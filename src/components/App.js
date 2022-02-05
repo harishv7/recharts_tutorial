@@ -7,6 +7,7 @@ import LineChartContainer from "./LineChart";
 import AreaChartContainer from "./AreaChart";
 import BarChartContainer from "./BarChart";
 import PieChartContainer from "./PieChart";
+import RadialBarChartContainer from "./RadialBarChart";
 
 function App() {
   const [data, setData] = useState([]);
@@ -96,6 +97,13 @@ function App() {
             >
               Pie Chart
             </Button>
+            <Button
+              colorScheme="teal"
+              size="md"
+              onClick={() => setChartType("radialbar")}
+            >
+              Radial Bar Chart
+            </Button>
           </Stack>
         </Stack>
       </Container>
@@ -103,6 +111,7 @@ function App() {
       {chartType === "area" && <AreaChartContainer data={data} />}
       {chartType === "bar" && <BarChartContainer data={data} />}
       {chartType === "pie" && <PieChartContainer data={data} />}
+      {chartType === "radialbar" && <RadialBarChartContainer data={data} />}
     </div>
   );
 }
